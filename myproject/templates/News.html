@@ -1,0 +1,16 @@
+<html>
+<section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h1>{{ instance.Title }}</h1>
+            <p>
+                {% autoescape off %}
+                {{ instance.Body }}
+                {% endautoescape %}
+            </p>
+        </div>
+
+    </div>
+
+</section>
+</html>

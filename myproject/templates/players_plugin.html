@@ -1,0 +1,28 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+
+
+<html>
+
+    <!-- el orden de lo siguiente es: linea 10 una imagen, 12-15 logos de redes sociales y 19-20 los datos del jugador-->
+    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <div class="member">
+          <div class="member-img">
+            <img src="media/{{instance.player_image.filename}}" class="img-fluid" alt="">
+            <div class="social">
+              <a href=""><i class="icofont-twitter"></i></a>
+              <a href=""><i class="icofont-facebook"></i></a>
+              <a href=""><i class="icofont-instagram"></i></a>
+              <a href=""><i class="icofont-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>{{instance.player_name}}</h4>
+            {{instance.player_position}}
+          </div>
+        </div>
+      </div>
+
+
+
+</html>

@@ -1,0 +1,97 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SportsCoLab  - {% page_attribute "page_title" %}</title> <!--Nombre del club seguido del nombre de la pagina-->
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+
+    {% render_block "css" %}
+</head>
+
+<body>
+     {% cms_toolbar %}
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">SportsCoLab <span>{% page_attribute "page_title" %}.</span></a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            {% show_menu 0 100 100 100 %} <!-- Esto es para que el menu se vea después cada vez que se añada una pagina-->
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!--Cuerpo de las paginas-->
+  <main id="main">
+  <section>
+     <br>
+        {% placeholder Contenido %} <!-- Relleno de paginas-->
+      {% block content %}{% endblock content %} <!-- Para extender las paginas a futuro-->
+  </section>
+  </main><!-- End #main -->
+
+  <!--Footer-->
+  <footer id="footer">
+    <head>
+      <meta charset="utf-8">
+       <style>
+         .social-btns{
+             display: inline-block;
+             height: 36px;
+             width: 36px;
+          }
+       </style>
+
+    </head>
+          <div>
+            {% static_placeholder "Footer" %} <!--Espacio estático para pie de página-->
+          </div>
+    </section>
+
+  </footer><!-- End Footer -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/counterup/counterup.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js'%}"></script>
+
+{% render_block "js" %}
+
+</body>
+
+</html>
